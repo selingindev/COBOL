@@ -55,41 +55,42 @@
            end-evaluate.
            
            perform NEWCOUNT
-           exit.
+           exit paragraph.
           
        NEWCOUNT.
            display "DESEJA REALIZAR OUTRA OPERACAO? (T/F)".
            accept W-BOOLEAN.
 
            IF CONTINUAR
-               perform PRINCIPAL
+               GO TO PRINCIPAL
            ELSE
-               display "OBRIGADO POR USAR O PROGRAMA".
+               display "OBRIGADO POR USAR O PROGRAMA"
+               STOP RUN
+           END-IF.
            
-           exit.
        SOMA.
            add W-NUMERO01 TO W-NUMERO02 GIVING W-RESULTADO. 
            move W-RESULTADO TO W-RESULTADO-FORM.
            display "O resultado da soma e: " W-RESULTADO-FORM.
-           exit.
+           exit paragraph.
 
        SUBTRACAO.
            subtract W-NUMERO02 from W-NUMERO01 GIVING W-RESULTADO.
            move W-RESULTADO TO W-RESULTADO-FORM.
            display "O resultado da subtracao e: " W-RESULTADO-FORM.
-           exit.
+           exit paragraph.
 
        MULTIPLICACAO. 
            multiply W-NUMERO01 BY W-NUMERO02 GIVING W-RESULTADO.
            move W-RESULTADO TO W-RESULTADO-FORM.
            display "O resultado da multiplicacao e: " W-RESULTADO-FORM.
-           exit.
+           exit paragraph.
 
        DIVISAO.
            divide W-NUMERO01 BY W-NUMERO02 GIVING W-RESULTADO.
            move W-RESULTADO TO W-RESULTADO-FORM.
            display "O resultado da divisao e: " W-RESULTADO-FORM.
-           exit. 
+           exit paragraph. 
        
        stop run.
        end program CALCULADORA.
